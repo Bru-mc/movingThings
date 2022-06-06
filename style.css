@@ -1,0 +1,16 @@
+.red{
+  background: red;
+}
+.backContent{
+  background: #000000;
+  height:500px;
+  width: 400px;
+  position: relative;
+}
+.square{
+  height: 50px;
+  width: 50px;
+  border: 2px solid #ffffff;
+  position: absolute;
+}
+ 
