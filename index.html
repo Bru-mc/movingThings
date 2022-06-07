@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
+
 <body>
-    <div class="backContent">
-        <div class="square red"></div>
+  <div class="backContent">
+    <div class="square red"></div>
+
+
+    <div class="playerStatus">
+
+      <div class="hpAndManaContainer">
+
+        <div class="hpContainer">
+          <h2 class="option option-hp">HP :</h2>
+          <div class="optionBar">
+            <div class="hpBar"></div>
+          </div>
+        </div>
+
+        <div class="manaContainer">
+          <h2 class="option option-mana">MP :</h2>
+          <div class="optionBar">
+            <div class="manaBar"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="keysPress.js"></script>
-    <script src="movement.js"></script>
+    <div class="enemy"></div>
+  </div>
+  <script src="keysPress.js"></script>
+  <script src="movement.js"></script>
 </body>
+
 </html>

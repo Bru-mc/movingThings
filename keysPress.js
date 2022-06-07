@@ -1,6 +1,9 @@
 const squareElement = document.querySelector(".square");
+const enemyElement = document.querySelector(".enemy");
 squareElement.style.left = "0";
 squareElement.style.bottom = "446px";
+enemyElement.style.left = "300px";
+enemyElement.style.bottom = "0";
 
 const Cenario = {
   MinBottom: 0,
@@ -8,14 +11,30 @@ const Cenario = {
   MinLeft: 0,
   MaxLeft: 346,
 }
-const startBottomValue = Number(squareElement.style.bottom.replace('px', ''));
-const startLeftValue = Number(squareElement.style.left.replace('px', ''));
+const squareStartBottomValue = Number(squareElement.style.bottom.replace('px', ''));
+const squareStartLeftValue = Number(squareElement.style.left.replace('px', ''));
+const enemyStartBottomValue = Number(enemyElement.style.bottom.replace('px', ''));
+const enemyStartLeftValue = Number(enemyElement.style.left.replace('px', ''));
   
 const Square = {
-  StartBottomPositionValue: startBottomValue,
-  StartLeftPositionValue: startLeftValue,
-  BottomPositionValue: startBottomValue,
-  LeftPositionValue: startLeftValue
+  StartBottomPositionValue: squareStartBottomValue,
+  StartLeftPositionValue: squareStartLeftValue,
+  BottomPositionValue: squareStartBottomValue,
+  LeftPositionValue: squareStartLeftValue,
+  status:{
+    hp: 100,
+    mp: 100,
+    dano: 10
+  }
+}
+const Enemy = {
+  StartBottomPositionValue: enemyStartBottomValue,
+  StartLeftPositionValue: enemyStartLeftValue,
+  BottomPositionValue: enemyStartBottomValue,
+  LeftPositionValue: enemyStartLeftValue, 
+  status:{
+    hp: 100
+  }
 }
 const Keys = {
   init: ()=>{
@@ -84,19 +103,19 @@ const Actions = {
   }
 }
 
-setInterval(()=>{
-    if(Keys.KeysPress.arrowDown){
-        Actions.Movement.Down()  
-      }
-      if(Keys.KeysPress.arrowUp){
-        Actions.Movement.Up()
-      }
-      if(Keys.KeysPress.arrowRight){
-        Actions.Movement.Right()
-      }
-      if(Keys.KeysPress.arrowLeft){
-        Actions.Movement.Left()
-      }
-},20)
+// setInterval(()=>{
+//     if(Keys.KeysPress.arrowDown){
+//         Actions.Movement.Down()  
+//       }
+//       if(Keys.KeysPress.arrowUp){
+//         Actions.Movement.Up()
+//       }
+//       if(Keys.KeysPress.arrowRight){
+//         Actions.Movement.Right()
+//       }
+//       if(Keys.KeysPress.arrowLeft){
+//         Actions.Movement.Left()
+//       }
+// },20)
 
 
