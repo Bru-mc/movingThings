@@ -34,18 +34,6 @@ const Keys = {
           Keys.KeysPress.arrowLeft = true;
           break;
       }
-      if(Keys.KeysPress.arrowDown){
-        Actions.Movement.Down()
-      }
-      if(Keys.KeysPress.arrowUp){
-        Actions.Movement.Up()
-      }
-      if(Keys.KeysPress.arrowRight){
-        Actions.Movement.Right()
-      }
-      if(Keys.KeysPress.arrowLeft){
-        Actions.Movement.Left()
-      }
     });
     document.addEventListener('keyup', (e) => {
       switch (e.code) {
@@ -71,30 +59,44 @@ const Actions = {
   Movement:{
     Up: () =>{
       if(Square.BottomPositionValue < Cenario.MaxBottom){
-        Square.BottomPositionValue += 4;
+        Square.BottomPositionValue += 2;
         squareElement.style.bottom = Square.BottomPositionValue.toString() + 'px'; 
       }   
     },
     Right: ()=>{
       if(Square.LeftPositionValue < Cenario.MaxLeft){
-        Square.LeftPositionValue += 4;
+        Square.LeftPositionValue += 2;
         squareElement.style.left = Square.LeftPositionValue.toString() + 'px'; 
       }
     },
     Down: () => {
       if(Square.BottomPositionValue > Cenario.MinBottom){
-        Square.BottomPositionValue -= 4;
+        Square.BottomPositionValue -= 2;
         squareElement.style.bottom = Square.BottomPositionValue.toString() + 'px'; 
       }
     },
     Left: () => {
       if(Square.LeftPositionValue > Cenario.MinLeft){
-        Square.LeftPositionValue -= 4;
+        Square.LeftPositionValue -= 2;
         squareElement.style.left = Square.LeftPositionValue.toString() + 'px'; 
       }  
-    }
+    },
   }
 }
 
+setInterval(()=>{
+    if(Keys.KeysPress.arrowDown){
+        Actions.Movement.Down()  
+      }
+      if(Keys.KeysPress.arrowUp){
+        Actions.Movement.Up()
+      }
+      if(Keys.KeysPress.arrowRight){
+        Actions.Movement.Right()
+      }
+      if(Keys.KeysPress.arrowLeft){
+        Actions.Movement.Left()
+      }
+},20)
 
 
